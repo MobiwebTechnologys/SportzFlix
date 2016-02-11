@@ -1,0 +1,46 @@
+<div ng-controller="CancelmembershipCtrl" cg-busy="cancel">
+
+        <div class="modal-header">
+            <div class="row">
+
+                <div class="col-sm-9">
+                <h3 class="modal-title puke-green">Cancel Membership</h3>
+            </div>
+            <div class="col-sm-2 pull-right">
+                <a class="close" ng-click="$dismiss()">X</a>
+            </div>
+
+            </div>
+
+        </div>
+        <div class="modal-body">
+
+            <div ng-hide="cancellation">
+                <p>Membership currently paid through:  <span>{{profile.billing_current_thru | amDateFormat:'dddd, MMMM Do YYYY'}}</span></p>
+            <p>Membership cancellation date: <span>{{profile.billing_current_thru | amDateFormat:'dddd, MMMM Do YYYY'}}</span></p>
+            <p>To cancel your membership, effective <span>{{profile.billing_current_thru | amDateFormat:'dddd, MMMM Do YYYY'}}</span>, click on the 'Cancel Membership' button below.</p>
+            </div>
+
+            <div ng-show="cancellation">
+                <p>Your membership has been canceled.  You will still be able to access the site unitll the end of your current billing period at <span>{{profile.billing_current_thru | amDateFormat:'dddd, MMMM Do YYYY'}}</span></p>
+
+            </div>
+
+
+            </div>
+        <div class="modal-footer">
+            <div ng-hide="cancellation">
+            <button class="btn btn-primary" type="button" ng-click="cancelMembership()">Cancel Membership</button>
+
+            </div>
+            <div ng-show="cancellation">
+                <button class="btn btn-primary" type="button" ng-click="$close()">OK</button>
+
+
+            </div>
+        </div>
+
+
+
+
+</div>

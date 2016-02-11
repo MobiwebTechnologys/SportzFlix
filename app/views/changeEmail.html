@@ -1,0 +1,32 @@
+<div ng-controller="ChangeemailCtrl">
+
+        <div class="modal-header">
+            <div class="row">
+
+                <div class="col-sm-9">
+                <h3 class="modal-title puke-green">Change Email Address</h3>
+            </div>
+            <div class="col-sm-2 pull-right">
+                <a class="close" ng-click="$dismiss()">X</a>
+            </div>
+
+            </div>
+
+
+        </div>
+        <div class="modal-body">
+
+            <p>Current email: {{auth.user_metadata.email}}</p>
+
+           <formly-form model="form" fields="fields"></formly-form>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="changeEmail()">OK</button>
+
+        </div>
+
+
+
+
+</div>

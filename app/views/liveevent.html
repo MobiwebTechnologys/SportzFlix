@@ -1,0 +1,128 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1641258842809269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div menu></div>
+<div ng-show="eventDataSuccess">
+
+<div class="pre-event" id="event-background-image-container" ng-show="beforeEvent && eventDataSuccess">
+    <div class="event-header-image"></div>
+    <div class="container">
+
+
+<!--NOTIFY USER BY EMAIL BEFORE START OF EVENT-->
+<div class="notify-button-container pull-right" >
+    <button class="btn btn-default" ng-click="notifyUser(event)">Notify Me</button>
+</div>
+
+<!--COUNTDOWN TO BE SHOWN BEFORE EVENT STARTS-->
+
+<div class="countdown-container" >
+
+    <h1>{{event.title}}</h1>
+    <h2>Live Broadcast Starts In:</h2>
+    <h3><timer countdown="10" interval="1000">{{days}} day{{daysS}}, {{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}</timer></h3>
+
+
+
+</div>
+            <!--SPONSORSHIP CODE AND LOCATION EMBED CODE-->
+<div class="row below-event-photo" style="color:white;">
+    <div class="col-sm-8">
+        <div class="row">
+            <h3>{{event.item }} sponsored by:</h3>
+            <div class="col-sm-2 col-xs-12 col-centered" ng-repeat="sponsor in event.sponsors">
+                <img src="{{sponsor.image}}">
+            </div>
+        </div>
+
+        <!--
+        <div class="row">
+            <div class="col-sm-10 col-xs-12 facebook-style">
+                <div onrender="rendered()" class="fb-comments" data-href="http://example.com/comments" data-numposts="5" data-colorscheme="light" ></div>
+            </div>
+        </div>
+        -->
+
+    </div>
+
+    <!--
+    <div class="col-sm-4">
+        <div class="row">
+            <h3>location:</h3>
+        </div>
+        <div class="row">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8863720414456!2d-122.27902874881465!3d37.81613041745223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857e02ab63fba3%3A0x16552a23320c7210!2s860+Mead+Ave%2C+Oakland%2C+CA+94607!5e0!3m2!1sen!2sus!4v1447191538689" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+
+    </div>
+    -->
+</div>
+    </div>
+
+
+</div>
+
+
+<!--ONLY SHOWN WHEN EVENT IS ACTUALLY LIVE-->
+<div ng-show="!beforeEvent" ngcloak>
+<div class="live-now-header-bar hidden-xs">
+    <h1>{{event.title}} - Live!</h1>
+</div>
+<div class="event-header-image hidden-xs"></div>
+
+
+
+<div class="container livestream-now">
+     <!--LIVE STREAM EMBED CODE-->
+<div  class="">
+
+ <div class="row">
+     <div class="col-sm-12">
+         <div class="live-video-container" ng-bind-html="eventIframe"></div>
+     </div>
+
+</div>
+    <!--END LIVE STREAM EMBED CODE-->
+
+
+    <!--SPONSORSHIP CODE AND LOCATION EMBED CODE-->
+<div class="row below-event-photo">
+    <div class="col-sm-8">
+        <div class="row">
+            <h3 class="location">{{event.title }} sponsored by:</h3>
+            <div class="col-sm-2 col-xs-12 col-centered" ng-repeat="sponsor in event.sponsors">
+                <img src="{{sponsor.image}}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-xs-12 facebook-style">
+                <div onrender="rendered()" class="fb-comments" data-href="http://example.com/comments" data-numposts="5" data-colorscheme="light" ></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-4">
+        <div class="row location">
+            <h3>location:</h3>
+        </div>
+        <div class="row">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8863720414456!2d-122.27902874881465!3d37.81613041745223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857e02ab63fba3%3A0x16552a23320c7210!2s860+Mead+Ave%2C+Oakland%2C+CA+94607!5e0!3m2!1sen!2sus!4v1447191538689" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+    </div>

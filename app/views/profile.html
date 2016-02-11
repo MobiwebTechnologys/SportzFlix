@@ -1,0 +1,58 @@
+<div class="profile-backdrop">
+    <div menu></div>
+    <div class="container profile profile-container">
+        <div class="col-lg-12"></div>
+        <div class="row profile-row">
+            <div class="col-sm-4">
+                <p class="puke-green" id="membership_and_billing_header">MEMBERSHIP AND BILLING</p>
+
+                <p>Member Since: <span>{{auth.profile.created_at | amDateFormat:'dddd, MMMM Do YYYY'}}</span></p>
+                <br>
+
+                <div class="hidden-sm hidden-xs">
+                    <button ng-click="cancelMembership()" class="btn-block btn btn-md  cancel-button">Cancel Membership
+                </button>
+                </div>
+
+                <div class="hidden-lg hidden-md">
+                    <button ng-click="cancelMembership()" class="btn-block btn btn-md  cancel-button cancel-button-sm">Cancel Membership
+                </button>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-8">
+                <div class="row profile-row">
+                    <div class="col-sm-8">
+                        <p>Name: {{auth.profile.user_metadata.first_name}} {{auth.profile.user_metadata.last_name}}</p>
+
+                        <p>Email: {{auth.profile.user_metadata.email}}</p>
+
+                        <p>Password: *********</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p><a ng-click="updateEmail()" class="profile-links">Change email</a></p>
+
+                        <p><a ng-click="changePassword()" class="profile-links">Change Password</a></p>
+
+                        <p><a ng-click="emailPreferences()" class="profile-links">Email Preferences</a></p>
+                    </div>
+                </div>
+                <div class="row profile-row-no-border">
+                    <div class="col-sm-8">
+                        <p>Billing Current Thru: <span>{{profile.billing_current_thru | amDateFormat:'dddd, MMMM Do YYYY'}}</span>
+                        </p>
+
+                        <p>Billing Method: {{profile.billing_method}} </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p><a ng-click="updateBilling()" class="profile-links">Update Payment Info</a></p>
+
+                        <p><a ng-click="billingHistory()" class="profile-links">Billing History</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

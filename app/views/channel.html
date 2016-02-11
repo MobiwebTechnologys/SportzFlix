@@ -1,0 +1,81 @@
+<div menu></div>
+
+
+<div class=" channel-header-background">
+
+
+    <div class="container">
+        <!--begin season selection and title row-->
+        <div class="row netflix-main-row">
+            <div class="col-sm-2 col-xs-12 channel-header-select-container hidden-xs">
+                <ui-select ng-model="currentSeason" on-select="grabEpisodesInSeason(channel.episodes, currentSeason)">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.title"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in channel.seasons">
+                        <span ng-bind="item.title"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="col-sm-7 col-sm-offset-1 col-xs-12">
+                <h1>{{channel.title | uppercase }}</h1>
+            </div>
+        </div>
+
+        <!--SCREEN DISPLAY FOR XS SIZE-->
+
+        <!--END-SCREEN-DISPLAY-FOR XS SIZE-->
+
+        <!--end season selection and title row-->
+
+
+        <!--begin episode selection slider-->
+
+        <div class="netflix-main-row hidden-xs">
+            <div class="netflix-row-content">
+                <carousel-lite items="episodesInCurrentSeason" number-of-slides="4" channel="channel" show-description="true" ng-if="episodesLoaded"></carousel-lite>
+            </div>
+        </div>
+        <!--end episode selection slider-->
+    </div>
+</div>
+<!--END EPISODE SLIDER-->
+
+<!--BEGIN PLAYER-->
+<div class="channel-image-underlay"></div>
+<div class="container nopad channel-background-image">
+    <div class="container " id="player-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <limelightplayer media="{{currentEpisode.media_id}}" ng-if="rerenderPlayer"></limelightplayer>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-xs-12 channel-episode-sub-description">
+                <h3>{{currentEpisode.season.title}}</h3>
+
+                <h1>{{currentEpisode.title}}</h1>
+
+                <div class="col-sm-9 nopad">
+                    <p>{{currentEpisode.description}}</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--END PLAYER-->
+
+<!--EPISODE SELECTOR FOR MOBILE-->
+<div class="row hidden-lg hidden-md hidden-sm" ng-repeat="item in channel.episodes">
+            <div class="col-xs-12">
+                <overlay-box></overlay-box>
+                <div class="channel-episode-sub-description">
+                    <h1>{{item.title}}</h1>
+                </div>
+            </div>
+        </div>
+<!--END EPISODE SELECTOR FOR MOBILE-->

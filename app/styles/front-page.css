@@ -1,0 +1,667 @@
+
+html {
+
+}
+
+
+body{
+
+    background-color: #212121;
+    font-size:18px;
+    font-family: 'PT Sans', sans-serif;
+}
+/*about page styles*/
+.top-wrapper{
+    /*relative sized top wrapper a low z-index to fall behind things*/
+    box-sizing: border-box;
+    color:white;
+    z-index: 0;
+    width: 100%;
+    min-height:61vh;
+}
+
+.top-layover{
+    /*absolute positioned layover with a slightly higher zindex that will contain the background images*/
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    width:100%;
+    z-index: 1;
+}
+.top-layover img{
+    z-index: 1;
+    opacity: 1;
+    height: 100%;
+    width: 100%;;
+
+}
+
+
+.top-content-wrapper{
+    /*absolute positioned div that contains the header text*/
+    margin: 5% auto;
+    max-width: 100%;
+    z-index: 13;
+    left: 0;
+    position:relative;
+
+}
+
+.top-content-wrapper h1{
+    font-size:3.5em;
+    line-height: 1.1em;
+}
+
+.bottom-half-container{
+    position:relative;
+    z-index: 20;
+}
+
+
+
+
+.center-content-wrapper{
+    /*a relatively positioned div that holds the info below the image backgrounds*/
+    z-index: 20;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+.center-content{
+    /*holds the actual center nav menu*/
+    background: -moz-linear-gradient(to bottom, #dddcd6, #b9b8b4 100%);
+    background: -webkit-linear-gradient(to bottom, #dddcd6, #b9b8b4 100%);
+    background: -ms-linear-gradient(to bottom, #dddcd6, #b9b8b4 100%);
+    background: -o-linear-gradient(to bottom, #dddcd6, #b9b8b4 100%);
+    background: linear-gradient(to bottom, #dddcd6, #b9b8b4 100%);
+    font-size:1.2vw;
+    width: 100%;
+    text-align:center;
+    color:#3d3d3d;
+    padding: 6vh 0;
+
+}
+
+.center-content span{
+    font-size:2vw;
+}
+
+.center-content .col{
+    /*arrange borders for the center nav cols*/
+    height:100%;
+    /*border-right:thin white solid;*/
+
+}
+
+.center-content .col:last-child{
+    /*arrange borders for the center nav cols*/
+    border-right:none;
+}
+
+.center-nav{
+
+    padding-top:2vh;
+}
+
+.bottom-content-container{
+    background-color: black;
+    color:white;
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+
+}
+
+.bottom-content-container .col{
+
+    margin-top:1vh;
+}
+
+.lead-text {
+    /*describes the text behavior of the center content*/
+
+    margin-top: 40px;
+}
+
+.lead-text {
+    font-size:1vw;
+    max-width: 85%;
+}
+
+
+
+.jumbo-header{
+    background-image: url("../images/impactbanner.png");
+    background-size:cover;
+    min-height: 40vh;
+    max-height: 50vh;
+    width:100%;
+    padding-bottom:150px;
+    color: white;
+    position: absolute;
+    top:0;
+    z-index: 1;
+}
+
+.height-sizer{
+    margin-top: 100px;
+    z-index: 17;
+}
+
+.jumbo-header:before{
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 50vh;
+    width: 100%;
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(20%,rgba(0,0,0,.8)),color-stop(65%,rgba(0,0,0,0)));
+    background-size: cover;
+}
+.middle-container-positioner{
+    position: absolute;
+    top:425px;
+    left:0;
+    width: 100%;
+}
+.front-middle-color {
+    background:rgb(20, 20, 20);
+    border-bottom:thick white solid;
+    color:white;
+    position:relative;
+    display: block;
+}
+
+.off-white {
+    background: #DDDCD6;
+}
+
+
+
+
+#main-container{
+    background-color: whitesmoke;
+}
+
+.landing-header{
+    background-color: transparent;
+}
+
+.landing-header-item {
+    color: #FFFFFF;
+    line-height: 19px;
+    text-align: center;
+    font-size: 16px;
+    font-family: pt-sans, sans-serif;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+
+.main-navbar{
+    position:relative;
+    top: 25px;
+}
+
+a {
+    color:white;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+
+.mid-item {
+    text-align:center;
+    margin-top:40px;
+
+
+
+}
+
+.mid-item.glyphicon{
+
+    font-size:5em;
+    display:inline-block;
+
+}
+
+p {
+    font-weight: 400;
+}
+
+#front-header {
+    min-height:100px ;
+}
+
+.middle-container {
+    margin-top: 90px;
+    margin-bottom: 30px;
+
+}
+
+.off-white-footer{
+    background-color: #d9d9d9;
+    min-height:100%;
+    padding-bottom:300px;
+    padding-top:80px;
+}
+
+.signup-footer{
+    background-color: whitesmoke;
+
+}
+
+.front-footer{
+    background-color: #d9d9d9;
+    width:100%;
+    position:absolute;
+    min-height:100% !important;
+    height:auto;
+
+
+
+}
+
+.normal-links {
+
+    color:blue;
+
+
+}
+
+.orange-links {
+    color:#FBB03B !important;
+}
+
+.form-container{
+    padding-left:15px;
+    padding-right:15px;
+    margin-top:100px;
+
+}
+
+.footer-text{
+    line-height: 12px;
+    font-size: 12px;
+    font-family: pt-sans, sans-serif;
+    font-weight: 400;
+}
+
+/*clear nav bar for front page*/
+
+.front-navbar, .nav-front, .nav:active{
+    background-color: transparent;
+    background: transparent;
+    border-color: transparent;
+
+
+}
+
+.navbar-collapse{
+    border-top:none;
+    box-shadow:none;
+}
+
+.navbar-collapse.in{
+    border:none;
+    overflow:visible;
+
+}
+
+.navbar-collapse.in table{
+    border:none;
+
+
+}
+
+.navbar li a{
+    color:white
+}
+
+
+.icon-bar{
+    background-color: #f4f4f4;
+}
+/*Main Form Container Styles*/
+
+.whitebox-container{
+    margin-top: 100px;
+    margin-bottom: 40px;
+    background-color: #F4F4F4;
+    max-width: 701px;
+
+}
+
+.footer-text-container{
+    margin-top:40px;
+}
+
+.front-toggle{
+    background-color: #86CB2B;
+    position:relative;
+    top:17px;
+}
+
+
+
+.brand-position{
+    position:relative;
+    top:25px;
+}
+
+
+/*FRONT END LOG STYLES*/
+
+.hdSpace {
+    height: 100px;
+    position: relative;
+    display: block;
+
+}
+
+
+.hdPinTargetFront{
+    position: relative;
+    top: 0;
+    min-height: 100px;
+    margin: 0;
+
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 0 0%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 10px;
+    -webkit-font-smoothing: antialiased;
+    background-color: transparent;
+
+}
+
+
+
+
+.nflix-logo{
+    position:relative;
+    top:-6px;
+    text-decoration: none;
+    padding: 18px 0;
+    font-size: 32px;
+    color: #e50914;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 150px;
+    font-family: nf-icon;
+
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    background-color: transparent;
+    white-space: nowrap;
+}
+
+.netflix-right-nav-front{
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    display: flex;
+    -webkit-box-align: center;
+}
+
+.netflix-nav-element{
+    margin: 0 25px 0 0;
+}
+
+.netflix-nav-element button{
+    position: relative;
+    top: -3px;
+}
+
+.nav-element:last-child {
+    margin-right: 0;
+}
+
+.profile-drop-down{
+    position: relative;
+    font-size: 16px;
+    height: 32px;
+}
+
+
+
+.profile-drop-down-button{
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    -webkit-box-align: center;
+}
+
+.profile-link{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+.profile-text {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin-left: 6px;
+    font-weight: 700;
+    max-width: 80px;
+}
+
+
+.bg-color-header-brown{
+    background-color:transparent;
+    border-color:  transparent;
+}
+
+span.glyphicon {
+    font-size: 1.4em;
+}
+
+.profile-dropdown-link{
+    color:white !important;
+}
+
+
+
+
+.netflix-ul{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0 4%;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+    list-style-type: disc;
+}
+
+.netflix-ul li{
+    line-height: 70px;
+    text-align: -webkit-match-parent;
+
+}
+
+.netflix-ul a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+
+    html{
+        font-size:3vw;
+    }
+
+    h2{
+        font-size:3vw;
+    }
+
+
+    .top-wrapper{
+        /*relative sized top wrapper a low z-index to fall behind things*/
+
+
+        width: 100%;
+        min-height:100vw;
+        max-height: 120vw;
+    }
+
+
+
+    .top-layover::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom:0;
+        z-index: 10;
+        background-image: linear-gradient(to bottom, black, transparent);
+
+    }
+
+    .top-content-wrapper{
+        /*absolute positioned div that contains the header text*/
+
+        margin: 1% 1%;
+        max-width: 100%;
+        font-size: 1vw !important;
+        z-index: 13;
+        left: 0;
+        position:relative;
+
+    }
+
+    .lead-text h1{
+        font-size:24px;
+    }
+
+    .center-content{
+        font-size:4vw;
+    }
+
+    .bottom-half-container{
+        margin-top:-50px;
+    }
+
+    .hdPinTargetFront{
+        position: fixed;
+        top: 0;
+        min-height: 100px;
+        margin: 0;
+
+        width: 100%;
+        z-index: 100;
+        box-sizing: border-box;
+        padding: 0 4%;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 10px;
+        -webkit-font-smoothing: antialiased;
+        background-color: transparent;
+
+    }
+
+
+
+}
+
+/*tablets and such*/
+@media only screen and (min-width : 481px) and (max-width: 1080px) {
+
+
+    html{
+        font-size:3vw;
+    }
+
+    h2{
+        font-size:3vw;
+    }
+
+
+    .top-wrapper{
+        /*relative sized top wrapper a low z-index to fall behind things*/
+
+
+        width: 100%;
+        min-height:80vw;
+        max-height: 90vw;
+    }
+
+    .top-content-wrapper h1{
+        font-size: 3.5vh;
+    }
+
+
+    .top-layover::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom:0;
+        z-index: 10;
+        background-image: linear-gradient(to bottom, black, transparent);
+
+    }
+
+    .top-content-wrapper{
+        /*absolute positioned div that contains the header text*/
+
+        margin: 1% 1%;
+        max-width: 100%;
+        font-size: 3vw;
+        z-index: 13;
+        left: 0;
+        position:relative;
+
+    }
+
+    .lead-text{
+        font-size:3em;
+    }
+
+    .center-content{
+        font-size:2vw;
+    }
+
+    .bottom-half-container{
+        margin-top:-50px;
+    }
+
+
+
+}

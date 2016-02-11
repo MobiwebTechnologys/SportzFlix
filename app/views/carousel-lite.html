@@ -1,0 +1,44 @@
+
+
+    <!--LEFT TOGGLE-->
+    <div class="netflix-slider-item toggle">
+        <div class="netflix-title-card-container">
+
+            <div class="toggle-container left" ng-click="toggleLeft()">
+                <img class="img-responsive" src="images/leftarrow.png" style="height:96.1875px;">
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-repeat="item in displayedItems"  class="netflix-slider-item">
+
+        <div class="netflix-title-card-container">
+            <div class="netflix-title-card" id="{{item.id}}">
+
+                <overlay-box ng-click="goToEvent(item)" ng-if="event"></overlay-box>
+                <overlay-box ng-click="goToPlayer(item)" ng-if="!event"></overlay-box>
+                    </div>
+
+        </div>
+
+
+        <div class="episode-title-container">
+            <h2>{{item.title}}</h2>
+            <div ng-if="showDescription"><p>{{item.description}}</p></div>
+
+
+        </div>
+    </div>
+
+    <!--RIGHT TOGGLE-->
+    <div class="netflix-slider-item toggle">
+        <div class="netflix-title-card-container">
+            <div class="toggle-container right" ng-click="toggleRight()">
+                <img class="img-responsive" src="images/rightarrow.png" style="height:96.1875px;">
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,241 @@
+<div menu></div>
+<div>
+
+    <div class="container whitebox-container">
+
+        <div ng-hide="!paymentSuccess">
+            <h2 class="puke-green">Payment has been added</h2>
+
+            <p>
+                Your card ending in {{paymentSuccessData.payment_hint}} has been set as your payment method. You will be
+                charged 5$ once per month.
+            </p>
+
+            <p>
+                Please log back in <a href="/#/login">here</a> to continue to the site.
+            </p>
+
+        </div>
+
+        <div ng-hide="!paypalSuccess">
+            <h2 class="puke-green">Payment has been added</h2>
+
+            <p>
+                Your PayPal account with the email {{paymentSuccessData.payment_hint}} has been set as your payment
+                method. You will be charged 5$ once per month starting today.
+            </p>
+
+            <p>
+                Please log back in <a href="/#/login">here</a> to continue to the site.
+            </p>
+
+        </div>
+
+        <!--COLLECT USER NAME AND CONTACT EMAIL-->
+        <div class="container-fluid" ng-hide="validName">
+            <div class="row">
+                <h2 class="puke-green">Confirm your name email address</h2>
+            </div>
+            <form name="prePayment"
+                  ng-controller="NamecollectionformCtrl as form"
+                  novalidate
+                  ng-submit="form.submit(prePayment.$valid, prePayData)">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6 col-xs-12">
+                            <label for="first_name">Users First Name</label>
+                            <input type="text" class="form-control" name="first_name" ng-model="prePayData.first_name"
+                                   ng-required="true">
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <label for="last_name">Users Last Name</label>
+                            <input type="text" class="form-control" name="last_name" ng-model="prePayData.last_name"
+                                   ng-required="true">
+                        </div>
+                        <div ng-messages="prePayment.first_name.$error || prePayment.last_name.$error"
+                             ng-if="prePayment.$submitted">
+                            <div class="col-xs-12" ng-message="required"><span style="color:red;">First name and last name are required fields.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6">
+                        <label for="email">Contact Email Address</label>
+                        <input type="email" name="email" class="form-control" ng-model="prePayData.email"
+                               ng-required="true" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
+                    </div>
+                    <div ng-messages="prePayment.email.$error"
+                         ng-if="prePayment.$submitted || prePayment.email.$touched">
+                        <div class="col-xs-12" ng-message="required"><span
+                                style="color:red;">Email is a required field.</span></div>
+                        <div class="col-xs-12" ng-message="pattern"><span
+                                style="color:red;">Please enter a valid email</span></div>
+                    </div>
+                </div>
+                <div class="row" style="margin:15px 0 15px 0;">
+                    <div class="gosports-button-holder">
+                        <button type="submit" class="btn btn-large gosports-button">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--END COLLECT USER NAME AND CONTACT EMAIL-->
+
+        <!--COLLECT USER TOP THREE ALTERNATIVE SPORTS-->
+        <div ng-hide="validUserSports">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2 class="puke-green">Please list your three favorite alternative sports.</h2>
+
+                    <p>We are expanding and we need your input.</p>
+                </div>
+
+                <form name="sportPref"
+                      ng-controller="SportprefformCtrl as form"
+                      novalidate
+                      ng-submit="form.submit(sportPref.$valid, sportPrefData)">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="sport1">Sport #1</label>
+                            <input type="text" class="form-control" name="sport1" ng-model="sportPrefData.one"
+                                   ng-required="true">
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xs-12">
+                            <label for="sport2">Sport #2</label>
+                            <input type="text" class="form-control" name="sport2" ng-model="sportPrefData.two"
+                                   ng-required="true">
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+
+                       <div class="col-xs-12">
+                            <label for="sport3">Sport #3</label>
+                            <input type="text" class="form-control" name="sport3" ng-model="sportPrefData.three"
+                                   ng-required="true">
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div ng-messages="sportPref.$error"
+                             ng-if="prePayment.$submitted || prePayment.email.$touched">
+                            <div class="col-xs-12" ng-message="required"><span style="color:red;">Email is a required field.</span>
+                            </div>
+                            <div class="col-xs-12" ng-message="pattern"><span style="color:red;">Please enter a valid email</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="margin:15px 0 15px 0;">
+                        <div class="gosports-button-holder">
+                            <button type="submit" class="btn btn-large gosports-button">SUBMIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--END COLLECT USERS TOP THREE SPORTS-->
+
+        <div class="container-fluid" ng-hide="paymentSuccess || paypalSuccess || !validName ||!validUserSports" cg-busy="callPaypal || chargeCard">
+            <h2 class="puke-green">Subscribe for Access</h2>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+            <tabset justified="true">
+                <!--CREDIT CARD SIGN UP-->
+                <tab class="signup-tab" heading="Credit Card">
+                    <div class="cc-form-container row">
+                        <form stripe-form="handleStripe" name="card">
+                            <!--CC DETAILS-->
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label for="cc_number">Card number</label>
+                                    <input type="text" id="cc_number" class="form-control" ng-model="number"
+                                           payments-validate="card" payments-format="card" payments-type-model="type"
+                                           ng-class="myForm.number.$card.type"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label for="cc_expiry">Expiration</label>
+                                    <input type="text" id="cc_expiry" class="form-control" placeholder="mm/yy"
+                                           ng-model="expiry" payments-validate="expiry" payments-format="expiry"/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="cc_cvc">CVC</label>
+                                    <input type="text" id="cc_cvc" placeholder="xyx" class="form-control" ng-model="cvc"
+                                           payments-validate="cvc" payments-format="cvc" payments-type-model="type"/>
+                                </div>
+                            </div>
+                            <!--END CC DETAILS-->
+
+                            <!--NAME ON CARD-->
+                            <div class="col-sm-12">
+                                <label for="cc_name">Name on Card</label>
+                                <input type="text" class="form-control" id="cc_name" ng-model="name">
+                            </div>
+                            <!--END NAME ON CARD-->
+
+                            <!--SUBMIT-->
+                            <div class="row">
+
+                                <div class="col-sm-12" style="margin-top: 15px;">
+                                    <div class="gosports-button-holder">
+                                    <button type="submit" class="btn gosports-button">Start Membership</button>
+                                        </div>
+                                </div>
+                            </div>
+                            <!--END SUBMIT-->
+
+                        </form>
+
+                    </div>
+
+                </tab>
+
+                <!--PAY PAL SIGNUP-->
+                <tab heading="PayPal" class="update-tab">
+
+
+                    <div class="row">
+                        <p>To sign up, type in your first and last name and click on the "PayPal" button to log on to
+                            PayPal using your email and password.</p>
+                    </div>
+
+                    <!--PAYPAL BUTTON-->
+                    <div class="row" style="margin-top:15px; margin-bottom: 15px; margin-left: 15px;">
+                        <braintree-paypal options="paypalOptions"></braintree-paypal>
+                    </div>
+                    <!--END PAYPAL BUTTON-->
+
+
+                    <div class="row" ng-show="showPaypalError">
+                        <div class="col-sm-11">
+                            <p class="bg-danger">{{errorMessage}}</p>
+                        </div>
+
+                    </div>
+        </div>
+        </tab>
+
+        </tabset>
+    </div>
+</div>
+
+</div>

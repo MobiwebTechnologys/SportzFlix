@@ -1,0 +1,108 @@
+<div ng-controller="UpdatebillingmethodCtrl">
+
+        <div class="modal-header">
+		<div class="row">
+
+                <div class="col-sm-9">
+                <h3 class="modal-title puke-green">Change Billing Method</h3>
+            </div>
+            <div class="col-sm-2 pull-right">
+                <a class="close" ng-click="$dismiss()">X</a>
+            </div>
+
+            </div>
+
+
+        </div>
+        <div class="modal-body">
+
+
+
+	<div ng-hide="paymentSuccess || paypalSuccess" cg-busy="callPaypal || chargeCard">
+<p>Current Billing Method: {{currentBillingMethod}}</p>
+
+    <tabset justified="true">
+   <tab class="update-tab" heading="Credit Card">
+		<div class="cc-form-container row">
+		<form stripe-form="handleStripe" name="card">
+			<div class="form-group">
+              <div class="col-sm-12">
+                <label for="cc_number">Card number</label>
+                <input type="text" id="cc_number" class="form-control" ng-model="number" payments-validate="card" payments-format="card" payments-type-model="type" ng-class="myForm.number.$card.type"/>
+              </div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-6">
+                <label for="cc_expiry">Expiration</label>
+                <input type="text" id="cc_expiry"  class="form-control" placeholder="mm/yy" ng-model="expiry" payments-validate="expiry" payments-format="expiry" />
+              </div>
+
+			  		<div class="col-sm-6">
+                <label for="cc_cvc">CVC</label>
+                <input type="text" id="cc_cvc" placeholder="xyx" class="form-control" ng-model="cvc" payments-validate="cvc" payments-format="cvc" payments-type-model="type"/>
+              </div>
+
+			</div>
+
+
+				<div class="col-sm-12">
+					<label for="cc_name">Name on Card</label>
+					<input type="text" class="form-control" id="cc_name" ng-model="name">
+				</div>
+
+			<div class="row" >
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4" style="margin-top: 15px;">
+
+					<button type="submit" class="btn btn-success btn-lg">Add Card</button>
+				</div>
+			</div>
+
+
+            </form>
+
+			</div>
+
+	</tab>
+
+		 <tab heading="PayPal" class="update-tab">
+			 <div  style="margin-top: 15px; margin-bottom: 15px; margin-left:15px;">
+				 <div class="row">
+				 <p>To sign up, click on the "PayPal" button and log on to PayPal using your email and password.</p>
+			 </div>
+
+			 <div class="row">
+				 <div class="col-sm-4"></div>
+				 <div class="col-sm-4">
+
+					<braintree-paypal options="paypalOptions"></braintree-paypal>
+				 </div>
+				 <div class="col-sm-4"></div>
+
+			 </div>
+				 <div class="row" ng-show="showPaypalError">
+					 <div class="col-sm-11">
+						 <p class="bg-danger">{{errorMessage}}</p>
+					 </div>
+
+				 </div>
+			 </div>
+		 </tab>
+
+  </tabset>
+
+</div>
+</div>
+
+
+
+        </div>
+        <div class="modal-footer">
+
+        </div>
+
+
+
+
+</div>

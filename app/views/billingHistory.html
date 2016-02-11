@@ -1,0 +1,42 @@
+<div ng-controller="BillinghistoryCtrl">
+
+        <div class="modal-header">
+           <div class="row">
+
+                <div class="col-sm-9">
+                <h3 class="modal-title puke-green">Billing History</h3>
+            </div>
+            <div class="col-sm-2 pull-right">
+                <a class="close" ng-click="$dismiss()">X</a>
+            </div>
+
+            </div>
+
+        </div>
+        <div class="modal-body">
+
+
+            <div ng-repeat="charge in this.billingHistory | orderBy: 'date'">
+                <div ng-if="charge.brand == 'PayPal'">
+                    <p>{{charge.date * 1000 | date:'MM-dd-yyyy'}} | {{charge.amount}}$ with PayPal</p>
+                </div>
+                <div ng-if="charge.brand !== 'PayPal'">
+                    <p>{{charge.date * 1000 | date:'MM-dd-yyyy'}} | {{charge.amount}}$ with {{charge.brand}} ending in {{charge.last4}}</p>
+                </div>
+
+            </div>
+
+
+            </div>
+        <div class="modal-footer">
+            <div >
+            <button class="btn btn-primary" type="button" ng-click="$close()">OK</button>
+
+            </div>
+
+        </div>
+
+
+
+
+</div>

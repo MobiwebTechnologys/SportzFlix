@@ -1,0 +1,45 @@
+
+<div class="hdSpace" ng-controller="MenuCtrl">
+    <div class="menu-top-bar"></div>
+
+    <div class="hdPinTarget">
+ <div class="container">
+
+        <a class="nflix-logo" href="/#/">
+        <img class="img-responsive" src="images/gosportslogo.png">
+        </a>
+
+        <div class="netflix-right-nav pull-right">
+          <div class="netflix-nav-element">
+            <input type="search" ng-model ='search'><button class="btn btn-block">SEARCH</button>
+            <div class="netflix-nav-element">
+                <div class="profile-drop-down hidden-xs">
+        <span class="profile-text">Hi {{auth.profile.name | capitalize}}</span>
+                </div>
+            </div>
+
+            <div class="netflix-nav-element">
+                <div class="dropdown"  style="outline:none;">
+
+
+                    <button class="btn btn-block btn-md btn-header" type="button" id="dropdownMenu1"
+                            data-toggle="dropdown" >
+
+
+                      <span class="glyphicon glyphicon-menu-hamburger puke-green"></span>
+                    </button>
+
+
+                    <ul class="dropdown-menu  pull-right" aria-labelledby="dropdownMenu1">
+                       <li><a href="/#/profile" class="profile-dropdown-link">Profile</a></li>
+                        <li ng-show="auth.isAuthenticated"> <a class="profile-dropdown-link" href="/#/" ng-click="signout()">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

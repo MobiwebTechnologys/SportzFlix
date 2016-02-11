@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="bower_components/typicons.font/src/font/typicons.css" />
+    <link rel="stylesheet" href="bower_components/typicons.font/src/font/typicons.min.css" />
+    <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
+    <link rel="stylesheet" href="bower_components/ui-select/dist/select.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <!-- build:css(.tmp) styles/front-page.css -->
+    <link rel="stylesheet" href="styles/front-page.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paymentfont/1.1.2/css/paymentfont.css">
+</head>
+<body ng-app="sportzflixApp">
+
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<!-- logged in-->
+
+
+<div class="">
+    <div ng-view=""></div>
+</div>
+
+<!-- not logged in -->
+
+<!--
+    <div class="footer">
+      <div class="container">
+
+      </div>
+    </div>
+-->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+            (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/api-check/dist/api-check.js"></script>
+<script src="bower_components/angular-formly/dist/formly.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
+<script src="bower_components/angular-payments/lib/angular-payments.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/braintree-angular/dist/braintree-angular.js"></script>
+<script src="bower_components/velocity/velocity.js"></script>
+<script src="bower_components/ng-morphing-modal/build/js/ngMorphingModal.js"></script>
+<script src="bower_components/flexslider/jquery.flexslider.js"></script>
+<script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="bower_components/angular-slick/dist/slick.js"></script>
+<script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+<script src="bower_components/ui-select/dist/select.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/momentjs/moment.js"></script>
+<script src="bower_components/humanize-duration/humanize-duration.js"></script>
+<script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+<script src="bower_components/angular-easyfb/build/angular-easyfb.js"></script>
+<script src="bower_components/angular-slick-carousel/dist/angular-slick.js"></script>
+<script src="bower_components/angular-cbuffer/angular-cbuffer.js"></script>
+<script src="bower_components/matchmedia/matchMedia.js"></script>
+<script src="bower_components/matchmedia-ng/matchmedia-ng.js"></script>
+<script src="bower_components/auth0-lock/build/auth0-lock.js"></script>
+<script src="bower_components/auth0.js/build/auth0.js"></script>
+<script src="bower_components/auth0-angular/build/auth0-angular.js"></script>
+<script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+<script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/browsevideo.js"></script>
+<script src="scripts/services/limelight.service.js"></script>
+<script src="scripts/directives/wrapowlcarousel.js"></script>
+<script src="scripts/non_bower_stuff/angular-owl-carousel.js"></script>
+<script src="scripts/non_bower_stuff/owl.carousel.js"></script>
+<script src="http://video.limelight.com/player/embed.js"></script>
+<script src="scripts/controllers/modalplayer.js"></script>
+<script src="scripts/directives/limelightplayer.js"></script>
+<script src="scripts/controllers/signup.js"></script>
+<script src="scripts/controllers/reset-password.js"></script>
+<script src="scripts/controllers/addpayment.js"></script>
+<script src="scripts/services/paymentmethodservice.js"></script>
+<script src="scripts/controllers/profile.js"></script>
+<script src="scripts/services/profilemanagement.js"></script>
+
+<script src="scripts/controllers/changeemail.js"></script>
+<script src="scripts/services/profileupdateservice.js"></script>
+<script src="scripts/controllers/changepassword.js"></script>
+<script src="scripts/controllers/emailpreferences.js"></script>
+<script src="scripts/controllers/updatebillingmethod.js"></script>
+<script src="scripts/controllers/cancelmembership.js"></script>
+<script src="scripts/controllers/billinghistory.js"></script>
+<script src="scripts/directives/menu.js"></script>
+<script src="scripts/directives/frontmenu.js"></script>
+<script src="scripts/directives/frontfooter.js"></script>
+<script src="scripts/controllers/channel.js"></script>
+<script src="scripts/directives/title-card.js"></script>
+<script src="scripts/directives/footer.js"></script>
+<script src="scripts/directives/subdescription.js"></script>
+<script src="scripts/controllers/liveevent.js"></script>
+<script src="scripts/directives/event-card.js"></script>
+<script src="scripts/directives/carousel-lite.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/directives/signup.js"></script>
+<script src="scripts/controllers/namecollectionform.js"></script>
+<script src="scripts/controllers/sportprefform.js"></script>
+<script src="scripts/controllers/search.js"></script>
+<!-- endbuild -->
+
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+ <script src="http://assets.delvenetworks.com/player/embed.js"></script>
+
+
+
+</body>
+</html>

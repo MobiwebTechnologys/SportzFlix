@@ -1,0 +1,46 @@
+<div ng-controller="EmailpreferencesCtrl">
+
+        <div class="modal-header">
+            <div class="row">
+
+                <div class="col-sm-9">
+                <h3 class="modal-title puke-green">Email Setting</h3>
+            </div>
+            <div class="col-sm-2 pull-right">
+                <a class="close" ng-click="$dismiss()">X</a>
+            </div>
+
+            </div>
+
+        </div>
+        <div class="modal-body">
+
+
+            <p>To opt-out of any communications from GoSports, simply uncheck the checkbox below.</p>
+           <formly-form model="form" fields="fields"></formly-form>
+
+
+            <h3>Live Event Notifications</h3>
+            <p>Uncheck the check box to unsubscribe from event notifications for that event.</p>
+            <form>
+                <div ng-repeat="item in fieldsTwo">
+                    <div class="checkbox">
+                        <label>
+                        <input ng-model="formTwo[item.key]" type="{{item.type}}" name="{{item.key}}" checked>{{item.templateOptions.label}}</label>
+                    </div>
+
+                </div>
+
+            </form>
+
+
+        </div>{{item.templateOptions.label}}</label>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="submitPreferences()">OK</button>
+
+        </div>
+
+
+
+
+</div>
