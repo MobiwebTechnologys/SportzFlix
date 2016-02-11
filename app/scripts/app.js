@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * @ngdoc overview
  * @name sportzflixApp
@@ -10,7 +9,6 @@
  */
 angular
   .module('sportzflixApp', [
-
     'ngCookies',
     'ngResource',
     'ngRoute',
@@ -18,7 +16,6 @@ angular
     'ngTouch',
     'angular-owl-carousel',
     'ui.bootstrap',
-
     'angularPayments',
     'braintree-angular',
     'cgBusy',
@@ -74,8 +71,6 @@ angular
         appId: '1641258842809269'
       })
     })
-
-
 
 
     .constant("limelightAccessKey", 'hEG/dm1MZMV1wOQTw0uMfhbQJyw=')
