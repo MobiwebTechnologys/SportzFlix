@@ -14,7 +14,7 @@ angular.module('sportzflixApp')
     .controller('MenuCtrl', function ($scope, $location, auth, store) {
 
         $scope.searchTxt = '';
-        $scope.txtcolor = {"color": "#FFFFFF" };
+        $scope.txtcolor = { "color": "#FFFFFF" };
         console.log('menuauth', auth);
         $scope.auth = auth;
 
@@ -44,4 +44,18 @@ angular.module('sportzflixApp')
             controllelr: 'MenuCtrl'
 
         }
+    })
+    
+    
+/*Mobiweb Technologys Pvt. Ltd.*/
+    .directive('errSrc', function () { // for image 404 status checking
+        return {
+            link: function (scope, element, attrs) {
+                element.bind('error', function () {
+                    if (attrs.src != attrs.errSrc) {
+                        attrs.$set('src', attrs.errSrc);
+                    }
+                });
+            }
+        };
     });
