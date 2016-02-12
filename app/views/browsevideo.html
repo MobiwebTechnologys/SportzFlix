@@ -30,7 +30,7 @@
       <carousel-lite items="events" number-of-slides="3" channel="channel" show-description="false" event="true"></carousel-lite>
     </div>
   </div>
-  <div class="netflix-main-row" ng-repeat="channel in channels | orderBy:'channel.order_by'">
+  <div class="netflix-main-row" ng-if="channel.episodes.length > 0" ng-repeat="channel in channels | orderBy:'channel.order_by'">
     <h2 class="video-browse-headers">{{channel.title}}</h2>
     <div class="netflix-row-content">
       <carousel-lite items="channel.episodes" number-of-slides="3" channel="channel" show-description="false" event="false"></carousel-lite>
