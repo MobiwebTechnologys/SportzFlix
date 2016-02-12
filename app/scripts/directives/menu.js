@@ -11,41 +11,37 @@
 
 angular.module('sportzflixApp')
 
-    .controller('MenuCtrl',
-function ($scope,  auth, store, $location) {
+    .controller('MenuCtrl', function ($scope, $location, auth, store) {
 
-  $scope.search = ''
-console.log('menuauth', auth)
-  $scope.auth = auth;
+        $scope.searchTxt = '';
+        $scope.txtcolor = {"color": "#FFFFFF" };
+        console.log('menuauth', auth);
+        $scope.auth = auth;
 
-$scope.profile = auth.profile;
-  console.log($scope.profile);
+        $scope.profile = auth.profile;
+        console.log($scope.profile);
 
+        $scope.signout = function () {
+            console.log('signing out');
+            auth.signout();
+            store.remove('token');
+            store.remove('profile');
+        }
 
-$scope.signout = function () {
-  console.log('signing out')
-  auth.signout();
-  store.remove('token');
-  store.remove('profile');
+        $scope.search = function () {
+            if ($scope.searchTxt == '')
+                return false;
+            $location.path('/search/' + $scope.searchTxt);
+        };
 
-
-}
-
-$scope.search = function(){
-$location.path('/search/' + $scope.search)
-
-}
-
-
-})
+    })
 
 
-  .directive('menu', function () {
-    return {
+    .directive('menu', function () {
+        return {
+            templateUrl: 'views/menu.html',
+            restrict: 'EA',
+            controllelr: 'MenuCtrl'
 
-      templateUrl: 'views/menu.html' ,
-      restrict: 'EA',
-      controllelr:'MenuCtrl'
-
-    }
-  });
+        }
+    });
