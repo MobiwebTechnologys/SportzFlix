@@ -45,3 +45,17 @@ angular.module('sportzflixApp')
 
         }
     })
+	
+	/*Mobiweb Technologys Pvt. Ltd.*/
+
+   .directive('errSrc', function () { // image 404 status checking
+        return {
+            link: function (scope, element, attrs) {
+                element.bind('error', function () {
+                    if (attrs.src != attrs.errSrc) {
+                        attrs.$set('src', attrs.errSrc);
+                    }
+                });
+            }
+        };
+    });
