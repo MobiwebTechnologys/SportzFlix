@@ -11,7 +11,8 @@
 
         <div class="netflix-right-nav pull-right">
           <div class="netflix-nav-element">
-            <input type="search" ng-model ='search'><button class="btn btn-block">SEARCH</button>
+            <input type="search" class="text-success" ng-model ='searchTxt'>
+                <button class="btn btn-block" ng-click="search()">SEARCH</button>
             <div class="netflix-nav-element">
                 <div class="profile-drop-down hidden-xs">
         <span class="profile-text">Hi {{auth.profile.name | capitalize}}</span>
