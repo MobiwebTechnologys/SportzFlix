@@ -132,14 +132,19 @@
             restrict: 'E',
             link: function (scope, element, attrs) {
                     var overlay = element.find("div")[0];
+					var addzoom = element.find("img");
                     var box = element.find("div")[1];
-
+					var elm_parent = $(overlay).parents(".netflix-slider-item");
                     $(element).hover(
 					function(){
 					$(overlay).css('display', 'block');
+					$(addzoom).addClass('add_zoom');
+					$(elm_parent).addClass('img_parent');
         	},
            function(){
-           $(overlay).css('display', 'none')
+           $(overlay).css('display', 'none');
+		   $(addzoom).removeClass('add_zoom');
+		   $(elm_parent).removeClass('img_parent');
 			});
            }
         }
