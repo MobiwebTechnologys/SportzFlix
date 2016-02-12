@@ -1,62 +1,48 @@
-<div menu></div>
-
+ <div menu></div>
 <div cg-busy="getTheChannels"></div>
 
 <!--BEGIN HEADER CAROUSEL-->
 <div class="container-fluid carousel-container hidden-xs hidden-sm">
-
-
-    <uib-carousel interval="7000">
-        <uib-slide ng-repeat="image in carousels" template-url="views/cslide.html" active="slide.active">
-            <div ng-click="goToCarousel(image)">
-            <div class="carousel-image" ng-click="goToCarousel(image)" >
-                <img ng-src="{{image.image}}" class="img-responsive" >
+  <uib-carousel interval="7000">
+    <uib-slide ng-repeat="image in carousels" template-url="views/cslide.html" active="slide.active">
+      <div ng-click="goToCarousel(image)">
+        <div class="carousel-image" ng-click="goToCarousel(image)" > <img ng-src="{{image.image}}" err-src="{{image.static_img}}" class="img-responsive" > </div>
+        <div class="container">
+          <div class="carousel-captioner" >
+            <div class="header-title">
+              <p>{{image.title}}</p>
+              <h1>{{image.description}}</h1>
             </div>
-            <div class="container">
-                <div class="carousel-captioner" >
-
-                <div class="header-title">
-                    <p>{{image.title}}</p>
-                    <h1>{{image.description}}</h1>
-                </div>
-            </div>
-            </div>
-            <!--overlay div to shade the image-->
-             <div class="carousel-overlay"></div>
-                </div>
-        </uib-slide>
-    </uib-carousel>
+          </div>
+        </div>
+        <!--overlay div to shade the image-->
+        <div class="carousel-overlay"></div>
+      </div>
+    </uib-slide>
+  </uib-carousel>
 </div>
 <!--END HEADER CAROUSEL-->
 
 <div class="container browse-video-container hidden-xs">
-
-    <div class="netflix-main-row" ng-if="events.length > 0">
-        <h2 class="video-browse-headers">Live Events</h2>
-
-        <div class="netflix-row-content">
-            <carousel-lite items="events" number-of-slides="3" channel="channel" show-description="false" event="true"></carousel-lite>
-
-</div>
-</div>
-
-    <div class="netflix-main-row" ng-repeat="channel in channels | orderBy:'channel.order_by'">
-        <h2 class="video-browse-headers">{{channel.title}}</h2>
-        <div class="netflix-row-content">
-            <carousel-lite items="channel.episodes" number-of-slides="3" channel="channel" show-description="false" event="false"></carousel-lite>
-        </div>
+  <div class="netflix-main-row" ng-if="events.length > 0">
+    <h2 class="video-browse-headers">Live Events</h2>
+    <div class="netflix-row-content">
+      <carousel-lite items="events" number-of-slides="3" channel="channel" show-description="false" event="true"></carousel-lite>
     </div>
-
-
+  </div>
+  <div class="netflix-main-row" ng-repeat="channel in channels | orderBy:'channel.order_by'">
+    <h2 class="video-browse-headers">{{channel.title}}</h2>
+    <div class="netflix-row-content">
+      <carousel-lite items="channel.episodes" number-of-slides="3" channel="channel" show-description="false" event="false"></carousel-lite>
     </div>
+  </div>
+</div>
 
 <!--BEGIN XS DEVICE BROWSE CONTAINER-->
-    <div class="container-fluid hidden-lg hidden-md hidden-sm">
-
-        <div class="row" ng-repeat="channel in channels" ng-click="goToPlayer(channel.episodes[0], channel)">
-            <h2 class="video-browse-headers">{{channel.title}}</h2>
-            <img class="img-responsive" src="{{channel.episodes[0].lead_thumbnail}}">
-        </div>
-    </div>
-<!--END XS DEVICE BROWSE CONTAINER-->
+<div class="container-fluid hidden-lg hidden-md hidden-sm">
+  <div class="row" ng-repeat="channel in channels" ng-click="goToPlayer(channel.episodes[0], channel)">
+    <h2 class="video-browse-headers">{{channel.title}}</h2>
+    <img class="img-responsive" src="{{channel.episodes[0].lead_thumbnail}}"> </div>
+</div>
+<!--END XS DEVICE BROWSE CONTAINER--> 
 

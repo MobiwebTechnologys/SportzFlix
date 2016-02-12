@@ -128,27 +128,20 @@
 
     var overlayBox = function(){
         return {
-            template: '<img src="{{item.lead_thumbnail}}" class="img-responsive"><div class="extra-overlay"><div class="extra-play-button"><span class="glyphicon glyphicon-play-circle" ></div></div>',
+            template: '<img ng-src="{{item.lead_thumbnail}}" err-src="{{item.static_img}}" class="img-responsive"><div class="extra-overlay"><div class="extra-play-button"><span class="glyphicon glyphicon-play-circle" ></div></div>',
             restrict: 'E',
             link: function (scope, element, attrs) {
-
                     var overlay = element.find("div")[0];
                     var box = element.find("div")[1];
 
                     $(element).hover(
-            function(){
-            $(overlay).css('display', 'block')
-
-
-
-        },
-             function(){
+					function(){
+					$(overlay).css('display', 'block');
+        	},
+           function(){
            $(overlay).css('display', 'none')
-        }
-        );
-
-                }
-
+			});
+           }
         }
     }
 

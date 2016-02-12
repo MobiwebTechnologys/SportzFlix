@@ -129,12 +129,6 @@ html{
     border-color: transparent;
     font-size:22px;
 }
-
-.btn-header:hover, .btn-header:focus, .btn-header:active{
-    background-color:#212121;
-    border-color: #212121;
-}
-
 /* video navigation page stuff*/
 
 .video-browse-container{
@@ -849,14 +843,6 @@ position:absolute;
 span.glyphicon {
     font-size: 1.4em;
 }
-
-.profile-dropdown-link{
-    color:white !important;
-}
-
-
-
-
 .netflix-ul{
     display: inline-block;
     vertical-align: top;
@@ -963,7 +949,7 @@ span.glyphicon {
     position: relative;
     white-space: normal;
     vertical-align: top;
-    width:175px;
+    width:167px;
 
 
 }
@@ -1586,3 +1572,23 @@ font-weight: 100;
 
 
 /*search bar css*/
+
+.header_dd .dropdown-menu > li > a{ color:#fff}
+.header_dd .dropdown-menu > li > a:hover,
+.header_dd .dropdown-menu > li > a:focus{ background-color:#EC1D25;}
+.header_dd .dropdown-menu::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #333;
+    position: absolute;
+    top: -9px;
+    right: 14px;
+    z-index: 999999;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.search_btn {
+    background: transparent;
+    border: none;
+}
