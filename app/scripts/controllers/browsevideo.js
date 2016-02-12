@@ -38,13 +38,11 @@ angular.module('sportzflixApp')
         $scope.getTheChannels = limelightService.getChannels()
             $scope.getTheChannels.success(function(data){
             $scope.channels = data;
-			console.log(JSON.stringify($scope.channels));
 			for(var i= 0; i <$scope.channels.length; i++){
 					for (var j=0; j<$scope.channels[i].episodes.length; j++){
 						$scope.channels[i].episodes[j].static_img = "../../images/feature_img.jpg";
 						}
 				}
-//			console.log($scope.channels);
         })
 
         //grab the header carousel images
